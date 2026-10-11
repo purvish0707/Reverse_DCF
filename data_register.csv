@@ -1,0 +1,116 @@
+item,value,unit,fiscal year/date,source document,page or table/section,exact line item label,status
+Revenue from Operations,1478.42,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Revenue from Operations / Total Income from Operations,EXTRACTED
+Other Income,2.99,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Other Income,EXTRACTED
+Operating EBITDA,240.94,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, P&L Derived","Revenue - Operating Expenses (excl D&A, Finance Cost)",DERIVED
+Depreciation & Amortisation,70.04,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss","Depreciation, Impairment and Amortisation Expenses",EXTRACTED
+Finance Cost (P&L),13.25,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Financial Costs,EXTRACTED
+Profit Before Tax (PBT),157.65,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Profit from continuing operations before Tax,EXTRACTED
+EBIT (PBT + Finance Cost),170.90,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, P&L Derived",PBT + Financial Costs,DERIVED
+Tax Expense,40.70,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Tax Expense (Current & Deferred Tax),EXTRACTED
+Effective Tax Rate (t),25.82%,Percentage,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Derived",Tax Expense / PBT,DERIVED
+Profit After Tax (PAT),116.95,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Profit for the year,EXTRACTED
+Cash Flow from Operations (CFO),213.91,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Net cash from operating activities,EXTRACTED
+Purchase of PPE / Fixed Assets,158.15,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Increase in Fixed assets/Capital Work in Progress / Purchase of Fixed assets,EXTRACTED
+Sale Proceeds of Fixed Assets,0.70,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Sale of fixed assets,EXTRACTED
+Net Capex,157.46,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Derived",Purchase of Fixed Assets - Sale of Fixed Assets,DERIVED
+Interest Paid (Cash Flow),12.45,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Interest paid,EXTRACTED
+Income Tax Paid (Cash Flow),41.50,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Income Tax Paid,EXTRACTED
+Inventories,247.74,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Inventories,EXTRACTED
+Trade Receivables,610.90,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Trade Receivables,EXTRACTED
+Trade Payables,272.31,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Trade Payable (Micro & Small + Other),EXTRACTED
+Cash & Bank Balances,37.95,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Cash & Cash Equivalents + Other Bank Balances,EXTRACTED
+Total Borrowings (Debt),183.88,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Non-Current Borrowings + Current Borrowings,EXTRACTED
+FCFF Method (a),66.29,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,Derived via Method (a),CFO + Finance Cost*(1-t) - Net Capex,DERIVED
+FCFF Method (b),57.42,Rs. Crore,FY26,GNA_Axles_Annual_Report_2025-26.pdf,Derived via Method (b),EBIT*(1-t) + D&A - Net Capex - Change in NWC,DERIVED
+Revenue from Operations,1539.74,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Revenue from Operations / Total Income from Operations,EXTRACTED
+Other Income,2.61,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Other Income,EXTRACTED
+Operating EBITDA,213.20,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, P&L Derived","Revenue - Operating Expenses (excl D&A, Finance Cost)",DERIVED
+Depreciation & Amortisation,57.10,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss","Depreciation, Impairment and Amortisation Expenses",EXTRACTED
+Finance Cost (P&L),11.86,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Financial Costs,EXTRACTED
+Profit Before Tax (PBT),144.24,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Profit from continuing operations before Tax,EXTRACTED
+EBIT (PBT + Finance Cost),156.10,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, P&L Derived",PBT + Financial Costs,DERIVED
+Tax Expense,37.15,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Tax Expense (Current & Deferred Tax),EXTRACTED
+Effective Tax Rate (t),25.75%,Percentage,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Derived",Tax Expense / PBT,DERIVED
+Profit After Tax (PAT),107.09,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 134, Statement of Profit and Loss",Profit for the year,EXTRACTED
+Cash Flow from Operations (CFO),92.08,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Net cash from operating activities,EXTRACTED
+Purchase of PPE / Fixed Assets,110.91,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Increase in Fixed assets/Capital Work in Progress / Purchase of Fixed assets,EXTRACTED
+Sale Proceeds of Fixed Assets,1.08,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Sale of fixed assets,EXTRACTED
+Net Capex,109.83,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Derived",Purchase of Fixed Assets - Sale of Fixed Assets,DERIVED
+Interest Paid (Cash Flow),10.56,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Interest paid,EXTRACTED
+Income Tax Paid (Cash Flow),37.50,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 135, Cash Flow Statement",Income Tax Paid,EXTRACTED
+Inventories,193.64,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Inventories,EXTRACTED
+Trade Receivables,638.34,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Trade Receivables,EXTRACTED
+Trade Payables,183.94,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Trade Payable (Micro & Small + Other),EXTRACTED
+Cash & Bank Balances,32.22,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Cash & Cash Equivalents + Other Bank Balances,EXTRACTED
+Total Borrowings (Debt),243.81,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,"Page 133, Balance Sheet",Non-Current Borrowings + Current Borrowings,EXTRACTED
+FCFF Method (a),-8.94,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,Derived via Method (a),CFO + Finance Cost*(1-t) - Net Capex,DERIVED
+FCFF Method (b),-16.44,Rs. Crore,FY25,GNA_Axles_Annual_Report_2025-26.pdf,Derived via Method (b),EBIT*(1-t) + D&A - Net Capex - Change in NWC,DERIVED
+Revenue from Operations,1506.26,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Revenue from Operations / Total Income from Operations,EXTRACTED
+Other Income,2.40,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Other Income,EXTRACTED
+Operating EBITDA,199.67,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, P&L Derived","Revenue - Operating Expenses (excl D&A, Finance Cost)",DERIVED
+Depreciation & Amortisation,53.34,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss","Depreciation, Impairment and Amortisation Expenses",EXTRACTED
+Finance Cost (P&L),11.55,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Financial Costs,EXTRACTED
+Profit Before Tax (PBT),134.79,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Profit from continuing operations before Tax,EXTRACTED
+EBIT (PBT + Finance Cost),146.34,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, P&L Derived",PBT + Financial Costs,DERIVED
+Tax Expense,34.82,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Tax Expense (Current & Deferred Tax),EXTRACTED
+Effective Tax Rate (t),25.84%,Percentage,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Derived",Tax Expense / PBT,DERIVED
+Profit After Tax (PAT),99.96,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Profit for the year,EXTRACTED
+Cash Flow from Operations (CFO),98.41,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Net cash from operating activities,EXTRACTED
+Purchase of PPE / Fixed Assets,88.68,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Increase in Fixed assets/Capital Work in Progress / Purchase of Fixed assets,EXTRACTED
+Sale Proceeds of Fixed Assets,0.17,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Sale of fixed assets,EXTRACTED
+Net Capex,88.51,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Derived",Purchase of Fixed Assets - Sale of Fixed Assets,DERIVED
+Interest Paid (Cash Flow),10.22,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Interest paid,EXTRACTED
+Income Tax Paid (Cash Flow),35.60,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Income Tax Paid,EXTRACTED
+Inventories,197.60,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Inventories,EXTRACTED
+Trade Receivables,571.27,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Trade Receivables,EXTRACTED
+Trade Payables,181.55,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Trade Payable (Micro & Small + Other),EXTRACTED
+Cash & Bank Balances,32.59,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Cash & Cash Equivalents + Other Bank Balances,EXTRACTED
+Total Borrowings (Debt),189.17,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Non-Current Borrowings + Current Borrowings,EXTRACTED
+FCFF Method (a),18.47,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,Derived via Method (a),CFO + Finance Cost*(1-t) - Net Capex,DERIVED
+FCFF Method (b),11.52,Rs. Crore,FY24,GNA_Axles_Annual_Report_2023-24.pdf,Derived via Method (b),EBIT*(1-t) + D&A - Net Capex - Change in NWC,DERIVED
+Revenue from Operations,1582.93,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Revenue from Operations / Total Income from Operations,EXTRACTED
+Other Income,1.43,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Other Income,EXTRACTED
+Operating EBITDA,234.10,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, P&L Derived","Revenue - Operating Expenses (excl D&A, Finance Cost)",DERIVED
+Depreciation & Amortisation,48.51,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss","Depreciation, Impairment and Amortisation Expenses",EXTRACTED
+Finance Cost (P&L),10.97,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Financial Costs,EXTRACTED
+Profit Before Tax (PBT),174.62,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Profit from continuing operations before Tax,EXTRACTED
+EBIT (PBT + Finance Cost),185.59,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, P&L Derived",PBT + Financial Costs,DERIVED
+Tax Expense,44.41,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Tax Expense (Current & Deferred Tax),EXTRACTED
+Effective Tax Rate (t),25.43%,Percentage,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Derived",Tax Expense / PBT,DERIVED
+Profit After Tax (PAT),130.21,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 132, Statement of Profit and Loss",Profit for the year,EXTRACTED
+Cash Flow from Operations (CFO),105.43,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Net cash from operating activities,EXTRACTED
+Purchase of PPE / Fixed Assets,75.44,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Increase in Fixed assets/Capital Work in Progress / Purchase of Fixed assets,EXTRACTED
+Sale Proceeds of Fixed Assets,0.15,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Sale of fixed assets,EXTRACTED
+Net Capex,75.29,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Derived",Purchase of Fixed Assets - Sale of Fixed Assets,DERIVED
+Interest Paid (Cash Flow),9.51,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Interest paid,EXTRACTED
+Income Tax Paid (Cash Flow),46.00,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 133, Cash Flow Statement",Income Tax Paid,EXTRACTED
+Inventories,188.25,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Inventories,EXTRACTED
+Trade Receivables,560.94,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Trade Receivables,EXTRACTED
+Trade Payables,225.48,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Trade Payable (Micro & Small + Other),EXTRACTED
+Cash & Bank Balances,27.22,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Cash & Cash Equivalents + Other Bank Balances,EXTRACTED
+Total Borrowings (Debt),185.98,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,"Page 131, Balance Sheet",Non-Current Borrowings + Current Borrowings,EXTRACTED
+FCFF Method (a),38.31,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,Derived via Method (a),CFO + Finance Cost*(1-t) - Net Capex,DERIVED
+FCFF Method (b),31.92,Rs. Crore,FY23,GNA_Axles_Annual_Report_2023-24.pdf,Derived via Method (b),EBIT*(1-t) + D&A - Net Capex - Change in NWC,DERIVED
+Revenue from Operations,1270.47,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, Statement of Profit and Loss",Revenue from Operations / Total Income from Operations,EXTRACTED
+Other Income,0.56,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, Statement of Profit and Loss",Other Income,EXTRACTED
+Operating EBITDA,181.50,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, P&L Derived","Revenue - Operating Expenses (excl D&A, Finance Cost)",DERIVED
+Depreciation & Amortisation,49.71,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, Statement of Profit and Loss","Depreciation, Impairment and Amortisation Expenses",EXTRACTED
+Finance Cost (P&L),11.23,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, Statement of Profit and Loss",Financial Costs,EXTRACTED
+Profit Before Tax (PBT),120.56,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, Statement of Profit and Loss",Profit from continuing operations before Tax,EXTRACTED
+EBIT (PBT + Finance Cost),131.79,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, P&L Derived",PBT + Financial Costs,DERIVED
+Tax Expense,31.80,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, Statement of Profit and Loss",Tax Expense (Current & Deferred Tax),EXTRACTED
+Effective Tax Rate (t),26.38%,Percentage,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, Derived",Tax Expense / PBT,DERIVED
+Profit After Tax (PAT),88.76,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 109, Statement of Profit and Loss",Profit for the year,EXTRACTED
+Cash Flow from Operations (CFO),41.38,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 110, Cash Flow Statement",Net cash from operating activities,EXTRACTED
+Purchase of PPE / Fixed Assets,45.57,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 110, Cash Flow Statement",Increase in Fixed assets/Capital Work in Progress / Purchase of Fixed assets,EXTRACTED
+Sale Proceeds of Fixed Assets,0.02,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 110, Cash Flow Statement",Sale of fixed assets,EXTRACTED
+Net Capex,45.55,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 110, Derived",Purchase of Fixed Assets - Sale of Fixed Assets,DERIVED
+Interest Paid (Cash Flow),9.73,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 110, Cash Flow Statement",Interest paid,EXTRACTED
+Income Tax Paid (Cash Flow),33.00,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 110, Cash Flow Statement",Income Tax Paid,EXTRACTED
+Inventories,188.01,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 108, Balance Sheet",Inventories,EXTRACTED
+Trade Receivables,474.28,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 108, Balance Sheet",Trade Receivables,EXTRACTED
+Trade Payables,201.62,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 108, Balance Sheet",Trade Payable (Micro & Small + Other),EXTRACTED
+Cash & Bank Balances,4.88,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 108, Balance Sheet",Cash & Cash Equivalents + Other Bank Balances,EXTRACTED
+Total Borrowings (Debt),207.15,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,"Page 108, Balance Sheet",Non-Current Borrowings + Current Borrowings,EXTRACTED
+FCFF Method (a),4.10,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,Derived via Method (a),CFO + Finance Cost*(1-t) - Net Capex,DERIVED
+FCFF Method (b),-4.75,Rs. Crore,FY22,GNA_Axles_Annual_Report_2021-22.pdf,Derived via Method (b),EBIT*(1-t) + D&A - Net Capex - Change in NWC,DERIVED

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse DCF Terminal | Institutional Valuation & Goal Seek</title>
+  <meta name="description" content="Institutional Reverse DCF calculator for Non-Financials (FCFF) and Financial Institutions (FCFE & Excess Return ROE) with live Goal Seek solver.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js for financial charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-theme">
+  <!-- Top Navigation / Header -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <div class="logo-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+          <polyline points="16 7 22 7 22 13"></polyline>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">REVERSE DCF <span class="badge-terminal">INDIA TERMINAL</span></span>
+        <span class="brand-subtitle">Damodaran Valuation Framework for Indian Equities (NSE & BSE) &bull; Units: ₹ Crore</span>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <button id="excelGuideBtn" class="btn btn-outline" title="View Excel Goal Seek Instructions">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        Excel Goal Seek Guide
+      </button>
+      <a href="Reverse_DCF_Model.xlsx" download="Reverse_DCF_Model.xlsx" class="btn btn-primary" id="downloadExcelBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span id="downloadBtnText">Download Excel Model (.xlsx)</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Valuation Category Selector & Live Data Extractor -->
+    <section class="methodology-card">
+      <!-- Live Data Search & Extraction Bar -->
+      <div class="search-banner">
+        <div class="search-title-row">
+          <div class="search-heading">
+            <span class="live-dot"></span>
+            <h3>NSE &amp; BSE Live Data Extractor</h3>
+            <span class="badge badge-source">NSE/BSE &bull; CRISIL/CARE Rating &bull; Units: ₹ Crore</span>
+          </div>
+          <span class="text-muted search-subtitle">Enter Indian company name or ticker (e.g. "GNA Axles", "Reliance", "TCS", "HDFC Bank", "Tata Motors")...</span>
+        </div>
+        
+        <form id="searchCompanyForm" class="search-form-row">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="companySearchInput" class="search-input" placeholder="Type NSE / BSE company name (e.g. GNA Axles, Reliance, TCS, HDFC Bank, Tata Motors) or symbol..." required autocomplete="off">
+            <button type="button" id="clearSearchBtn" class="clear-btn" style="display:none;">&times;</button>
+          </div>
+          <button type="submit" id="fetchCompanyBtn" class="btn btn-primary btn-search">
+            <span class="btn-text">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              Extract &amp; Auto-Solve
+            </span>
+            <span class="btn-spinner" style="display:none;">
+              <span class="spinner-ring"></span>
+              Extracting yFinance...
+            </span>
+          </button>
+        </form>
+
+        <!-- Live Extraction Metadata Badge Bar -->
+        <div class="extraction-status-bar" id="extractionStatusBar" style="display: none;">
+          <div class="status-item">
+            <span class="status-label">Company:</span>
+            <span class="status-val text-cyan" id="extCompName">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Sector:</span>
+            <span class="status-val" id="extSector">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Price:</span>
+            <span class="status-val text-emerald" id="extPrice">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label" id="extWaccLabel">Rating &amp; WACC:</span>
+            <span class="status-val text-amber" id="extWacc">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label" id="extCashflowLabel">Trailing FCFF:</span>
+            <span class="status-val text-cyan" id="extCashflow">--</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mode-selector-container">
+        <div class="mode-tabs" role="tablist">
+          <button class="mode-tab active" id="tabNonFinancial" data-mode="non-financial" role="tab">
+            <span class="mode-icon">🏢</span>
+            <div class="mode-text">
+              <span class="mode-heading">Non-Financial Corporates</span>
+              <span class="mode-desc">FCFF &bull; WACC &bull; Enterprise Value Bridge</span>
+            </div>
+            <span class="status-indicator">Active</span>
+          </button>
+          
+          <button class="mode-tab" id="tabFinancial" data-mode="financial" role="tab">
+            <span class="mode-icon">🏦</span>
+            <div class="mode-text">
+              <span class="mode-heading">Financial Institutions (Banks/Insurance)</span>
+              <span class="mode-desc">Excess Return (ROE) &bull; Cost of Equity (Ke) &bull; FCFE</span>
+            </div>
+            <span class="status-indicator">Active</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Ticker Presets -->
+      <div class="preset-strip">
+        <span class="preset-label">Preloaded Presets:</span>
+        <div class="preset-buttons" id="presetButtons">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Workspace Grid -->
+    <div class="workspace-grid">
+      <!-- Left Column: Inputs & Assumptions -->
+      <aside class="panel input-panel">
+        <div class="panel-header">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+            Valuation Inputs
+          </h3>
+          <span class="badge badge-info" id="modelMethodBadge">FCFF Method</span>
+        </div>
+
+        <form id="dcfForm" class="inputs-form" onsubmit="event.preventDefault();">
+          <!-- Dynamic Form Content injected by JS according to selected mode -->
+          <div id="dynamicInputsContainer"></div>
+        </form>
+      </aside>
+
+      <!-- Center & Right Column: Solver Output & Visualizations -->
+      <section class="results-area">
+        <!-- Live Goal Seek KPI Bar -->
+        <div class="kpi-banner">
+          <div class="kpi-card main-kpi">
+            <div class="kpi-label" id="impliedMetricLabel">Implied 10-Yr FCFF CAGR</div>
+            <div class="kpi-value-row">
+              <span class="kpi-value highlight-cyan" id="impliedMetricValue">--%</span>
+              <span class="kpi-subtext" id="impliedMetricSubtext">10-yr high growth</span>
+            </div>
+            <div class="kpi-benchmark" id="benchmarkVerdict">Calculating...</div>
+          </div>
+
+          <div class="kpi-card secondary-kpi">
+            <div class="kpi-label" id="impliedMetricLabel20">Implied 20-Yr FCFF CAGR</div>
+            <div class="kpi-value-row">
+              <span class="kpi-value text-emerald" id="impliedMetricValue20">--%</span>
+              <span class="kpi-subtext" id="impliedMetricSubtext20">20-yr runway</span>
+            </div>
+            <div class="kpi-benchmark" id="benchmarkVerdict20" style="color: #6EE7B7;">Extended compounding</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Current Share Price</div>
+            <div class="kpi-value" id="dispCurrentPrice">₹0.00</div>
+            <div class="kpi-meta" id="dispMarketCap">Mkt Cap: ₹0 Cr</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label" id="valuationAnchorLabel">Implied Enterprise Value</div>
+            <div class="kpi-value" id="dispAnchorVal">₹0 Cr</div>
+            <div class="kpi-meta" id="dispAnchorMeta">PV of Cash Flows + TV</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-label">Goal Seek Convergence</div>
+            <div class="kpi-value text-emerald" id="dispConvergence">₹0.00 Diff</div>
+            <div class="kpi-meta">Root precision: 0.0001%</div>
+          </div>
+        </div>
+
+        <!-- Charts & Analysis Container -->
+        <div class="analysis-tabs-card">
+          <div class="card-toolbar">
+            <div class="card-title-group">
+              <h3 id="chartTitle">Cash Flow Projection &amp; Present Value</h3>
+              <p class="text-muted" id="chartSubtitle">Discrete Cash Flows Discounted to Present Value (₹ Crore)</p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+              <div class="horizon-switch-group">
+                <button class="horizon-btn active" id="btnHorizon10" data-horizon="10">10-Yr Runway</button>
+                <button class="horizon-btn" id="btnHorizon20" data-horizon="20">20-Yr Runway</button>
+              </div>
+              <div class="sub-tab-group">
+                <button class="sub-tab active" data-view="chart">Projection Chart</button>
+                <button class="sub-tab" data-view="sensitivity">Sensitivity Heatmap</button>
+                <button class="sub-tab" data-view="schedule">Full Projections Table</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- View 1: Chart View -->
+          <div class="tab-view-content active" id="viewChart">
+            <div class="chart-wrapper">
+              <canvas id="cashflowChart"></canvas>
+            </div>
+          </div>
+
+          <!-- View 2: Sensitivity Heatmap -->
+          <div class="tab-view-content" id="viewSensitivity">
+            <div class="sensitivity-container">
+              <div class="sensitivity-header">
+                <h4 id="sensTitle">Implied Rate Sensitivity Matrix</h4>
+                <p class="text-muted" id="sensLegend">Varying Discount Rate vs. Terminal Growth Rate (g)</p>
+              </div>
+              <div class="matrix-wrapper" id="sensitivityMatrixContainer">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- View 3: Full Projections Table -->
+          <div class="tab-view-content" id="viewSchedule">
+            <div class="table-responsive" id="scheduleTableContainer">
+              <table class="financial-table" id="projectionsTable">
+                <!-- Injected via JS -->
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reality Check / Expectation Benchmark Card -->
+        <div class="reality-card">
+          <div class="reality-header">
+            <h4>
+              <span class="icon-gauge">🧭</span>
+              Market Expectation Reality Check
+            </h4>
+            <span class="badge" id="realityBadge">Evaluation</span>
+          </div>
+          <div class="reality-body">
+            <div class="gauge-container">
+              <div class="gauge-track">
+                <div class="gauge-bar" id="gaugeBar" style="width: 50%;"></div>
+                <div class="gauge-markers">
+                  <span class="marker marker-1">Decline (<0%)</span>
+                  <span class="marker marker-2">GDP Pace (2-4%)</span>
+                  <span class="marker marker-3">Market Avg (7-10%)</span>
+                  <span class="marker marker-4">High Growth (15-22%)</span>
+                  <span class="marker marker-5">Exceptional (>25%)</span>
+                </div>
+              </div>
+            </div>
+            <p class="reality-commentary" id="realityCommentary">
+              Loading scenario analysis...
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Excel Goal Seek Modal -->
+  <div class="modal-overlay" id="goalSeekModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          How to Run Goal Seek in Excel
+        </h3>
+        <button class="btn-close" id="closeModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-step-list">
+          <div class="modal-step">
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <strong>Open the Downloaded Excel File</strong>
+              <p>Navigate to either <code>Non-Financial (FCFF)</code> or <code>Financials (FCFE & ROE)</code> tab.</p>
+            </div>
+          </div>
+          <div class="modal-step">
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <strong>Launch Goal Seek in Excel</strong>
+              <p>Use keyboard shortcut <kbd>Alt</kbd> + <kbd>A</kbd> + <kbd>W</kbd> + <kbd>G</kbd> (or go to <em>Data &gt; What-If Analysis &gt; Goal Seek</em>).</p>
+            </div>
+          </div>
+          <div class="modal-step">
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <strong>Enter the Exact Parameters:</strong>
+              <div class="excel-dialog-preview">
+                <div class="dialog-row">
+                  <span class="dialog-field">Set cell:</span>
+                  <span class="dialog-val highlight" id="modalSetCell">C29</span>
+                  <span class="dialog-note">(Model Share Price)</span>
+                </div>
+                <div class="dialog-row">
+                  <span class="dialog-field">To value:</span>
+                  <span class="dialog-val highlight" id="modalToValue">225.00</span>
+                  <span class="dialog-note">(Current Market Price)</span>
+                </div>
+                <div class="dialog-row">
+                  <span class="dialog-field">By changing cell:</span>
+                  <span class="dialog-val highlight" id="modalByChanging">C20</span>
+                  <span class="dialog-note">(Implied Growth Rate %)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-step">
+            <span class="step-num">4</span>
+            <div class="step-content">
+              <strong>Click OK</strong>
+              <p>Excel will run its internal iterative engine and converge on the exact growth rate that makes the DCF output match the market price.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="modalDoneBtn">Understood</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="terminal-footer">
+    <div class="footer-content">
+      <span>Reverse DCF Valuation Engine &bull; Built with institutional FCFF &amp; Damodaran Financials methodology</span>
+      <span class="text-muted">Target convergence tolerance: &lt; $0.0001 per share</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
